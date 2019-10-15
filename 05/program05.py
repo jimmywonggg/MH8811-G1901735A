@@ -1,5 +1,7 @@
 import json
 
+#Serialization and Deserialization 
+
 def serialize(data):
     data_type = type(data)
     if data_type is list:
@@ -60,6 +62,7 @@ def deserialize(data1):
 
  
 #comparsion
+
 def compare(d1,d2):
     if type(d1)!=type(d2):
         return False
@@ -79,24 +82,33 @@ def compare(d1,d2):
                     return False
             return True
 
+#Ask user for a path to the json file
 file = input("input the path and name of the json file:")
 filename=file
 data_s=open(file)
 data =json.load(data_s)
 data_s.close()
 print(data)
+
+
 #convert data structure to string then write string to file
 data1=serialize(data)
 file_name=input("input the file name of the json file:")
 f= open(file_name,'w')
 f.write(data1)
 f.close()
+
+
 #read string back from file
 f1 = open(file_name)
 s_file=f1.read()
 f1.close()
+
+
 #pass to deserialization
 deserialization_data = deserialize(s_file)
+
+
 #compare data structure
 if compare(data,deserialization_data):
     print('success!')
