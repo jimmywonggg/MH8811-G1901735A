@@ -72,7 +72,7 @@ def deserialize(data1):
  
 #comparsion
 
-def compare(d1,d2):
+def my_comparsion(d1,d2):
     if type(d1)!=type(d2):
         return False
     else:
@@ -111,7 +111,7 @@ deserialization_data = deserialize(s_file)
 
 
 #compare data structure
-if compare(data,deserialization_data):
+if my_comparsion(data,deserialization_data):
     print('success!')
 else:
     print('not success!')
