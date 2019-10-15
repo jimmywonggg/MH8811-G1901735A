@@ -1,5 +1,14 @@
 import json
 
+
+#Ask user for a path to the json file
+file = input("input the path and name of the json file:")
+filename=file
+data_s=open(file)
+data =json.load(data_s)
+data_s.close()
+print(data)
+
 #Serialization and Deserialization 
 
 def serialize(data):
@@ -81,14 +90,6 @@ def compare(d1,d2):
                 if d1[key]!=d2[key]:
                     return False
             return True
-
-#Ask user for a path to the json file
-file = input("input the path and name of the json file:")
-filename=file
-data_s=open(file)
-data =json.load(data_s)
-data_s.close()
-print(data)
 
 
 #convert data structure to string then write string to file
